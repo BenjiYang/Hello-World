@@ -24,7 +24,7 @@ For all: 1&7
 https://www.nginx.com/blog/introduction-to-microservices/
 https://www.nginx.com/blog/refactoring-a-monolith-into-microservices/
 
-For SIL developers: 2-4
+For S developers: 2-4
 https://www.nginx.com/blog/building-microservices-using-an-api-gateway/
 https://www.nginx.com/blog/building-microservices-inter-process-communication/
 https://www.nginx.com/blog/service-discovery-in-a-microservices-architecture/
