@@ -15,7 +15,7 @@ http://www.softwaretestinghelp.com/selenium-ide-download-and-installation-seleni
 
 
 There are 7 articles but actually they are linked with each other.
-I found them from Nginx website, although it is not chosen in HSBC, but actually the explanation is not hard selling Nginx.
+I found them from Nginx website, although it is not chosen, but actually the explanation is not hard selling Nginx.
 Actually it is presenting in a generic way. The design pattern and architecture are pretty similar for Spring-Cloud-Netflix.
 
 For all: 1&7
