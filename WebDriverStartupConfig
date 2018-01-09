@@ -1,0 +1,23 @@
+//Below is to set the Firefox startup with profile settings while using the webDriver test.
+FirefoxOptions options =  new FirefoxOptions();
+FirefoxProfile fp = new FirefoxProfile(new File("C:\\Users\\Test\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\uzau5vk1.default-1514956528875"));
+options.setProfile(fp)
+driver = new FirefoxDriver(options);
+
+
+//Firefox proxy config in Java
+FirefoxOptions options = new FirefoxOptions();
+FirefoxProfile fp = new FirefoxProfile();
+fp.setPreference("network.proxy.ssl", "localhost");
+fp.setPreference("network.proxy.ssl_port", 8080);
+fp.setPreference("network.proxy.type", 1);
+options.setProfile(fp);
+driver = new FirefoxDriver(options);
+
+//Chrome proxy config in Java
+ChromeOptions options = new ChromeOptions();
+Proxy proxy = new Proxy();
+proxy.setSslProxy("localhost:8080");
+options.setProxy(proxy);
+driver = new ChromeDriver(options);
+
