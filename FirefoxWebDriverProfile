@@ -1,0 +1,7 @@
+//Below is to set the Firefox startup with profile settings while using the webDriver test.
+FirefoxOptions options =  FirefoxOptions();
+FirefoxProfile fp = new FirefoxProfile(new File("C:\\Users\\Test\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\uzau5vk1.default-1514956528875"));
+options.setProfile(fp)
+driver = new FirefoxDriver(options);
+
+
