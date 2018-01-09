@@ -1,0 +1,91 @@
+https://thefriendlytester.co.uk/2014/10/set-proxy-using-webdriver.html
+
+I am currently at the London Tester Gathering Workshops in a session being hosted by Bill Matthews. He is showing the attendees how to use Zap Proxy. During the class he mentioned that you can hook your existing WebDriver checks into a proxy. Something I also mentioned in my recent “WebDriver Beyond Checks” post.
+
+So I thought I would create a quick post showing you how you can do this. I am not using Zap, instead I am using Fiddler, but you just need the right proxy url and change accordingly.
+
+Here is how you do it in C# using Firefox and Chrome drivers.
+
+Firefox
+        public void SettingUpAProxyUsingFirefoxDriver()
+        {
+            //Create a new Firefox profile
+            var firefoxProfile = new FirefoxProfile();
+            //Create a new proxy object
+            var proxy = new Proxy();
+            //Set the http proxy value, host and port.
+            proxy.HttpProxy = "localhost:8888";
+            //We then add this proxt setting to the Firefox profile we created
+            firefoxProfile.SetProxyPreferences(proxy);
+            //Then create a new Firefox Driver passing in the profile we created
+            //WebDriver we open a Firefox using this profile now
+            var Driver = new FirefoxDriver(firefoxProfile);
+
+            //Navigate to a url and look at the traffic being logged in Fiddler.
+            Driver.Navigate().GoToUrl("http://bbc.co.uk");
+        }
+view rawgistfile1.cs hosted with ❤ by GitHub
+Chrome
+        public void SettupUpAProxyUsingChromeDriver()
+        {
+            //Create a chrome options object
+            var chromeOptions = new ChromeOptions();
+            //Create a new proxy object
+            var proxy = new Proxy();
+            //Set the http proxy value, host and port.
+            proxy.HttpProxy = "localhost:8888";
+            //Set the proxy to the Chrome options
+            chromeOptions.Proxy = proxy;
+            //Then create a new ChromeDriver passing in the options
+            //ChromeDriver path isn't required if its on your path
+            //If it now downloaded it and put the path here
+            var Driver = new ChromeDriver(@"C:\Users\Richard\Desktop\", chromeOptions);
+
+            //Navigation to a url and a look at the traffic logged in fiddler
+            Driver.Navigate().GoToUrl("http://bbc.co.uk");
+        }
+view rawgistfile1.cs hosted with ❤ by GitHub
+Here is how you do it in Java.
+
+Firefox
+    public void ProxyUsingFirefoxDriver()
+    {
+        //Create a new Firefox profile
+        FirefoxProfile firefoxProfile = new FirefoxProfile();
+        //Then add the proxy setting to the Firefox profile we created
+        firefoxProfile.setPreference("network.proxy.http", "localhost");
+        firefoxProfile.setPreference("network.proxy.http_port", "8888");
+        //Then create a new Firefox Driver passing in the profile we created
+        //WebDriver we open a Firefox using this profile now
+        FirefoxDriver Driver = new FirefoxDriver(firefoxProfile);
+
+        //Navigate to a url and look at the traffic being logged in Fiddler.
+        Driver.navigate().to("http://bbc.co.uk");
+    }
+view rawProxyWithFirefoxDriverInJava hosted with ❤ by GitHub
+Chrome
+    public void ProxyUsingChromeDriver()
+    {
+        //Set the location of the ChromeDriver
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Richard\\Desktop\\chromedriver.exe");
+        //Create a new desired capability
+        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+        // Create a new proxy object and set the proxy
+        Proxy proxy = new Proxy();
+        proxy.setHttpProxy("localhost:8888");
+        //Add the proxy to our capabilities 
+        capabilities.setCapability("proxy", proxy);
+        //Start a new ChromeDriver using the capabilities object we created and added the proxy to
+        ChromeDriver Driver = new ChromeDriver(capabilities);
+
+        //Navigation to a url and a look at the traffic logged in fiddler
+        Driver.navigate().to("http://bbc.co.uk");
+    }
+view rawProxyWithChromeDriverInJava hosted with ❤ by GitHub
+There you go, you can now add a proxy to your WebDriver checks, and collate lots of information to explore from various proxies available such as, BrowserMob, Fiddler and ZapProxy.
+
+Happy Proxy-ing.
+
+
+
+
