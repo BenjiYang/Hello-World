@@ -1,0 +1,30 @@
+//检验字节缓冲流的功效
+import java.io.*;
+
+public class BufferedStreamDemo {
+	public static void main(String args[]) throws IOException {
+		long time1 = 0L;// 开始时间
+		long time2 = 0L;// 结束时间
+		System.out.println("使用数据流向数据文件写入1000000个整数:");
+		// 不使用字节缓冲流
+		time1 = System.currentTimeMillis();
+		FileOutputStream f1 = new FileOutputStream("data1.dat");
+		DataOutputStream out1 = new DataOutputStream(f1);
+		for (int i = 1; i <= 1000000; i++)
+			out1.writeInt(i);
+		out1.close();
+		time2 = System.currentTimeMillis();
+		System.out.println("不使用字节缓冲流,所用时间: " + (time2 - time1) + "毫秒");
+
+		// 使用字节缓冲流
+		time1 = System.currentTimeMillis();
+		FileOutputStream f2 = new FileOutputStream("data2.dat");
+		BufferedOutputStream buf = new BufferedOutputStream(f2, 2048);
+		DataOutputStream out2 = new DataOutputStream(buf);
+		for (int i = 1; i <= 1000000; i++)
+			out2.writeInt(i);
+		out2.close();
+		time2 = System.currentTimeMillis();
+		System.out.println("  使用字节缓冲流,所用时间: " + (time2 - time1) + "毫秒");
+	}
+}

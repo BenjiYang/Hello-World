@@ -1,0 +1,20 @@
+//例7.2  异常处理程序的基本形式
+method() throws Exception１,Exception２,……
+{
+    ……
+    try {    ……   //程序块 
+    } 
+    catch (Exception1 e1) { 
+        …… // 对Exception１进行处理 
+    } 
+    catch (Exception２ e2) {
+   	 ……// 对Exception2进行处理，处理了一部分，
+        throw(e2); //再抛出这个"异常"给上层的调用者
+    }
+    	……
+    finally {
+        ……
+    }
+}
+
+

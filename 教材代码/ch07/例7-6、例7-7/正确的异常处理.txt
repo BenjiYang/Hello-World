@@ -1,0 +1,11 @@
+//例7-7    正确的异常处理
+public void calculate() {
+		try {
+			int num = 0;
+			int num1 = 10 / num;
+		} catch (ArithmeticException ae) { // 先搜索异常子类
+			System.out.println("子类异常 catch 子句");
+		} catch (Exception e) {//再搜索异常父类
+			System.out.println("父类异常 catch 子句");
+		}
+	}

@@ -1,0 +1,12 @@
+//例7-6    不正确的异常处理
+public void calculate() {
+	      try {
+	         int num = 0;
+	         int num1 = 10 / num;
+	      }catch (Exception e) {
+	         System.out.println("父类异常 catch 子句");
+	      }catch (ArithmeticException ae) {  
+	         // 错误 – 不能到达的代码
+	         System.out.println("这个子类的父类是exception 类，且不能到达");
+	      }
+ }
