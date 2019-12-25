@@ -1,5 +1,8 @@
 # hello-world
 
+Spring javadoc - annotation
+https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/context/annotation/Configuration.html
+
 
 
 Edit the branch text.
