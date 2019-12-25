@@ -3,6 +3,8 @@
 Spring javadoc - annotation
 https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/context/annotation/Configuration.html
 
+Spring Boot javadoc - @ConfigurationProperties(prefix="app.datasource")
+https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-external-config-yaml
 
 
 Edit the branch text.
