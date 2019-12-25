@@ -7,6 +7,9 @@ Spring Boot javadoc - @ConfigurationProperties(prefix="app.datasource")
 https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-external-config-yaml
 
 
+Spring Boot - How to data access
+https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto-data-access
+
 Edit the branch text.
 
 Just write sth. to sepereate the master branch.
