@@ -30,3 +30,8 @@ https://www.nginx.com/blog/event-driven-data-management-microservices/
 
 For TA: 6
 https://www.nginx.com/blog/deploying-microservices/
+
+
+
+https://www.evernote.com/l/AbskD4uMEahMqbh0AQ1bD4ebmog5eVFTBs0
+
